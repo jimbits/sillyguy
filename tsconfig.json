@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    /* Environment & Target */
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler", // Best for Bun's internal resolver
+    "types": ["bun"], // Ensures Bun global types are available
+
+    /* JSX Configuration (Essential for Hono) */
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx", // Redirects JSX transform to Hono instead of React
+
+    /* Strictness & Safety */
+    "strict": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noEmit": true, // Bun runs .ts files directly; no need for tsc to output .js
+
+    /* Path Resolution */
+    "allowImportingTsExtensions": true,
+    "moduleDetection": "force",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/ts": ["./public/ts"],
+      "@/css": ["./public/css"],
+      "@/middleware": ["./server/middleware"],
+      "@/lib": ["./server/lib"] // Optional: setup for cleaner imports
+    }
+  },
+  "include": ["server/**/*", "public/ts/**/*", "sandbox/utils/delay.ts"]
+}

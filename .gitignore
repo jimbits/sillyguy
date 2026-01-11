@@ -1,0 +1,48 @@
+# --- Local ---
+sandbox/
+# --- Deployment / Secrets ---
+.vercel/
+
+
+# --- Environment / Secrets ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+.flaskenv
+
+# --- Dependency Directories ---
+node_modules/
+
+
+# --- Build Outputs ---
+dist/
+build/
+out/
+
+
+# --- Logs and Debugging ---
+*.log
+logs
+
+
+# --- Databases ---
+
+
+# --- Testing ---
+
+
+# --- OS Specific Files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- IDEs / Editors ---
+.vscode/
+!.vscode/extensions.json
+
+
+# --- Docker ---
+.docker/

@@ -1,0 +1,28 @@
+{
+  "name": "securitize",
+  "module": "",
+  "scripts": {
+    "dev": "bun x --bun vite",
+    "build": "vite build",
+    "preview": "bun run dist/index.js",
+    "start": "bun run ./server/index.ts",
+    "test": "bun ./tests/routes.test.ts",
+    "sand": "f() { bun ./sandbox/\"$@\"; }; f",
+    "load": "bun sandbox/launcher.ts",
+    "user": "bun ./sandbox/save.config.ts"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "ansis": "^4.2.0",
+    "consola": "^3.4.2",
+    "hono": "^4.11.3",
+    "vercel": "^50.1.6",
+    "yocto-spinner": "^1.0.0"
+  },
+  "devDependencies": {
+    "@hono/vite-dev-server": "^0.24.0",
+    "@types/bun": "latest",
+    "vite": "^7.3.1",
+    "vite-tsconfig-paths": "^6.0.4"
+  }
+}
