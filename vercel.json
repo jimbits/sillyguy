@@ -2,11 +2,10 @@
   "bunVersion": "1.x",
   "installCommand": "bun install",
   "buildCommand": "bun run build",
-  "outputDirectory": "dist/public",
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/index.js"
+      "source": "/(.*)",
+      "destination": "/api"
     }
   ]
 }

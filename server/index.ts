@@ -28,8 +28,11 @@ app.use("/*", serveStatic({ root: "./public" }));
  */
 app.notFound(async (c) => {
   try {
-    // This works in both Vite (Node-env) and Bun (Prod)
-    const fileContent = await Bun.file("./public/404.html").text();
+    // In production (built), files are in dist/ root
+    // In development, files are in public/
+    const isProd = !import.meta.dir?.includes("/server");
+    const filePath = isProd ? "./404.html" : "./public/404.html";
+    const fileContent = await Bun.file(filePath).text();
     return c.html(fileContent, 404);
   } catch (e) {
     return c.text("404 Not Found", 404);
